@@ -1,16 +1,33 @@
-import Button from "./Button";
-import { GoBell } from "react-icons/go";
+import { useState } from "react";
+import Dropdown from "./components/Dropdown";
 
 function App() {
+
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) =>  {
+    setSelection(option)
+  }
+
+  const options = [
+    {
+      label: 'Red', value: 'red'
+    },
+    {
+      label: 'Green', value: 'green'
+    },
+    {
+      label: 'Blue', value: 'blue'
+    },
+  ]
+
   return (
-    <>
-      <div><Button primary rounded className="mb-5"> <GoBell/>Hello There!!</Button></div>
-      <div><Button secondary>C</Button></div>
-      <div><Button success>A</Button></div>
-      <div><Button warning outline className="mb-5">D</Button></div>
-      <div><Button danger>A</Button></div>
-    </>
-  );
+    <div className="flex flex-row">
+      <Dropdown options={options} value={selection} onChange={handleSelect}/>
+      <Dropdown options={options} value={selection} onChange={handleSelect}/>
+    </div>
+  )
+
 }
 
 export default App;

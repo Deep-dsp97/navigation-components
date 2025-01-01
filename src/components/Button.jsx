@@ -1,3 +1,5 @@
+// Reusable Button Components
+
 import classNames from "classnames";
 import { twMerge } from 'tailwind-merge';
 
@@ -26,7 +28,7 @@ const Button = ({
     'text-green-500': outline && success,
     'text-yellow-400': outline && warning,
     'text-red-500': outline && danger
-  }))
+  }));
 
   return (
     <button {...rest} className={classes}>{children}</button>
