@@ -9,7 +9,7 @@ const Dropdown = ({options, onChange, value}) => {
 
     useEffect(() => {
         const handle = (event) => {
-
+            console.log("Document Event Handler Called");
             if(!divEl.current){
                 return;
             }
@@ -22,15 +22,17 @@ const Dropdown = ({options, onChange, value}) => {
         document.addEventListener('click', handle, false);
 
         return () => {
-            document.addEventListener('click', handle);
+            document.removeEventListener('click', handle);
         }
     }, [] );
 
     const handleClick = () => {
+        console.log("Dropdown Click Handler Called");
         setIsOpen(!isOpen);
     }
 
     const handleOptionsClick = (option) => {
+        console.log("Option Click Handler Called");
         // Close Options
         setIsOpen(false);
         // what option user has selected
