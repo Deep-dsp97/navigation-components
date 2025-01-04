@@ -16,9 +16,11 @@ const ModalPage = () => {
     }
 
     const modal = <Modal onClose={handleClose}>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem expedita velit inventore repudiandae voluptates nobis autem labore sint, accusantium commodi ex distinctio, nulla aut. Rem laboriosam in fugit alias.</p>
-        <div>
-            <Button onClick={handleClick} primary> I Accept </Button>
+        <div className='flex flex-col justify-between h-full'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem expedita velit inventore repudiandae voluptates nobis autem labore sint, accusantium commodi ex distinctio, nulla aut. Rem laboriosam in fugit alias.</p>
+            <div className='flex justify-end'>
+                <Button onClick={handleClick} primary> I Accept </Button>
+            </div>
         </div>
     </Modal>
 
